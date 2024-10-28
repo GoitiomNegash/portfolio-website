@@ -14,11 +14,11 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  
+  <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="A personal portfolio web site!">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,10 +29,36 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>portfolio</title>
+  <title>Portfolio....</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    .container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .indicator{
+<!--    width: 50vw;-->
+    color: red;
+    }
+  </style>
 </head>
-<body>
+<body style="overflow:hidden">
   <script src="flutter_bootstrap.js" async></script>
+<div id="loading_indicator" class="container">
+  <img class="indicator" src="./asset/loading.gif">
+</div>
+<script>
+  window.onload = function(){
+  setTimeout(function(){
+  var loadingIndicator = document.getElementById("loading_indicator");
+  if (loading_indicator){
+  loadingIndicator.remove();}
+  }, 10000);
+  }
+
+</script>
 </body>
 </html>
